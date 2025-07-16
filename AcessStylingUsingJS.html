@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin: 50px auto;
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        a {
+            display: block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Interactive Webpage</h1>
+        <p>Click the button to change the image below!</p>
+        <button onclick="changeImage()">Change Image</button>
+        <button onclick="changeBackground()">Change Background</button>
+        <img id="image" src="https://www.w3schools.com/w3images/lights.jpg" alt="Image">
+        <p>Visit <a href="https://www.example.com" target="_blank">this link</a> for more information.</p>
+    </div>
+    
+    <script>
+        function changeImage() {
+            let image = document.getElementById("image");
+            let images = [
+                "https://www.w3schools.com/w3images/lights.jpg",
+                "https://www.w3schools.com/w3images/mountains.jpg",
+                "https://www.w3schools.com/w3images/forest.jpg"
+            ];
+            let randomIndex = Math.floor(Math.random() * images.length);
+            image.src = images[randomIndex];
+        }
+
+        function changeBackground() {
+            let colors = ["#f4f4f4", "#ffcccb", "#d4edda", "#cce5ff", "#fff3cd"];
+            let randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+</body>
+</html>
+
